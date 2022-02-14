@@ -56,16 +56,28 @@ let lima = {
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
 };
-//call random number method for all locations
-let cities = [seattle, tokyo, dubai, paris, lima];
-for(let i = 0; i < cities.length; i++){
-  for(let i = 0; i < 14; i++){
-    cities[i].custGenerator();
-    cities[i].custForHour = cities[i].cust * cities[i].avgCookiesPerCust;
+//call custGenerator and create array for cookies sold for each city
+function cookiesSold(){
+  let cities = [seattle, tokyo, dubai, paris, lima];
+  for(let i = 0; i < cities.length; i++){
+    let city = cities[i];
+    for(let j = 0; j < 14; j++){
+      city.custGenerator();
+      let cookies = Math.ceil(Number(city.cust) * Number(city.avgCookiesPerCust));
+      city.cookiesPurchased.push(cookies);
+    }
   }
 }
 
 function randomCust(min,max){
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+cookiesSold();
+
+console.log(seattle.cookiesPurchased);
+console.log(tokyo.cookiesPurchased);
+console.log(dubai.cookiesPurchased);
+console.log(paris.cookiesPurchased);
+console.log(lima.cookiesPurchased);
 //call
