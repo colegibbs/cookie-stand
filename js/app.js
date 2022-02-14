@@ -1,6 +1,8 @@
 'use strict';
 
 // create dom window
+let citySales = document.getElementById('city sales');
+
 //seattle object: min customers per hr, max customers per hour, avg cookies per customer, method for random customer generator, empty arry for cookes purchased per hour based on random customer number
 let seattle = {
   minCustPerHour: 23,
@@ -12,6 +14,7 @@ let seattle = {
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
 };
+
 //Tokyo object: same specs
 let tokyo = {
   minCustPerHour: 3,
@@ -23,7 +26,8 @@ let tokyo = {
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
 };
-//Dubia: same specs
+
+//Dubai: same specs
 let dubai = {
   minCustPerHour: 11,
   maxCustPerHour: 38,
@@ -34,6 +38,7 @@ let dubai = {
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
 };
+
 //paris:same specs
 let paris = {
   minCustPerHour: 20,
@@ -45,6 +50,7 @@ let paris = {
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
 };
+
 //lima: same specs
 let lima = {
   minCustPerHour: 2,
@@ -69,6 +75,7 @@ function cookiesSold(){
   }
 }
 
+//random number generator for random number of customers generation
 function randomCust(min,max){
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
