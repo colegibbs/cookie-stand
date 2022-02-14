@@ -7,6 +7,7 @@ let seattle = {
   maxCustPerHour: 65,
   avgCookiesPerCust: 6.3,
   cust: 0,
+  cookiesPurchased: [],
   custGenerator: function(){
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
@@ -17,6 +18,7 @@ let tokyo = {
   maxCustPerHour: 24,
   avgCookiesPerCust: 1.2,
   cust: 0,
+  cookiesPurchased: [],
   custGenerator: function(){
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
@@ -27,6 +29,7 @@ let dubai = {
   maxCustPerHour: 38,
   avgCookiesPerCust: 3.7,
   cust: 0,
+  cookiesPurchased: [],
   custGenerator: function(){
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
@@ -37,6 +40,7 @@ let paris = {
   maxCustPerHour: 38,
   avgCookiesPerCust: 2.3,
   cust: 0,
+  cookiesPurchased: [],
   custGenerator: function(){
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
@@ -47,7 +51,7 @@ let lima = {
   maxCustPerHour: 16,
   avgCookiesPerCust: 4.6,
   cust: 0,
-  custForHour: [],
+  cookiesPurchased: [],
   custGenerator: function(){
     this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
   }
@@ -55,7 +59,10 @@ let lima = {
 //call random number method for all locations
 let cities = [seattle, tokyo, dubai, paris, lima];
 for(let i = 0; i < cities.length; i++){
-  cities[i].custGenerator();
+  for(let i = 0; i < 14; i++){
+    cities[i].custGenerator();
+    cities[i].custForHour = cities[i].cust * cities[i].avgCookiesPerCust;
+  }
 }
 
 function randomCust(min,max){
