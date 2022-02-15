@@ -3,6 +3,20 @@
 // create dom window
 let citySales = document.getElementById('city sales');
 
+//Store constructor
+function Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
+  this.location = location;
+  this.minCustPerHour = minCustPerHour;
+  this.maxCustPerHour = maxCustPerHour;
+  this.avgCookiesPerCust = avgCookiesPerCust;
+  cust: 0;
+  cookiesPurchased: [];
+
+}
+
+//Prototypes
+
+
 //seattle object: min customers per hr, max customers per hour, avg cookies per customer, method for random customer generator, empty arry for cookes purchased per hour based on random customer number
 let seattle = {
   location: 'Seattle',
