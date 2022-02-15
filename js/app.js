@@ -3,6 +3,9 @@
 // create dom window
 let citySales = document.getElementById('city sales');
 
+//Array to hold objects
+let stores = [];
+
 //Store constructor
 function Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
   this.location = location;
@@ -11,10 +14,95 @@ function Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
   this.avgCookiesPerCust = avgCookiesPerCust;
   cust: 0;
   cookiesPurchased: [];
-
+  stores.push(this);
 }
 
 //Prototypes
+//Sum prototype
+Store.prototype.cookieSum = function(){
+  this.totalCookies = sum(this.cookiesPurchased);
+};
+
+//random customer generator prototype
+Store.prototype.custGenerator = function(){
+  this.cust = randomCust(this.minCustPerHour, this.maxCustPerHour);
+};
+
+//render stores prototype
+Store.prototype.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  let num = 0;
+  for(let j = 6; j < 20; j++){
+    let liElem = document.createElement('li');
+
+    if(j <= 11){
+      liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
+      ulElem.appendChild(liElem);
+    }
+    else if(j === 12){
+      liElem.textContent = `${j}pm:${this.cookiesPurchased[num]} cookies`;
+      ulElem.appendChild(liElem);
+    }
+    else {
+      liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
+      ulElem.appendChild(liElem);
+    }
+    num++;
+  }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
+};
+
+//create arrays using constructor
+new Store('Seattle', 23, 65, 6.3);
+new Store('Tokyo', 3, 24, 1.2);
+new Store('Dubai', 11, 38, 3.7);
+new Store('Paris', 20, 38, 2.3);
+new Store('Lima', 2, 16, 4.6);
+
+//random number generator for random number of customers generation
+function randomCust(min,max){
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+//sum fucntion
+function sum(arr){
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum;
+}
+
+//call custGenerator and create array for cookies sold for each city and renders content
+function cookiesSoldAndRender(){
+  let cities = [seattle, tokyo, dubai, paris, lima];
+  for(let i = 0; i < cities.length; i++){
+    let city = cities[i];
+    for(let j = 0; j < 14; j++){
+      city.custGenerator();
+      let cookies = Math.ceil(Number(city.cust) * Number(city.avgCookiesPerCust));
+      city.cookiesPurchased.push(cookies);
+    }
+    city.cookieSum();
+  }
+  for(let i = 0; i < cities.length; i++){
+    cities[i].render();
+  }
+}
+
+
+// ************* Lab 06 ******************
+
+
 
 
 //seattle object: min customers per hr, max customers per hour, avg cookies per customer, method for random customer generator, empty arry for cookes purchased per hour based on random customer number
