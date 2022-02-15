@@ -127,10 +127,23 @@ seattle.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
+  tracker = [];
   for(let i = 0; i < this.cookiesPurchased.length; i++){
-    let liElem = document.createElement('li');
-    liElem.textContent = this.cookiesPurchased[i];
-    ulElem.appendChild(liElem);
+    for(let j = 6; j < 20; j++){
+      let liElem = document.createElement('li');
+      tracker.push[j];
+      
+      if(){
+      }
+      else if(j < 12){
+        liElem.textContent = `${j}am:${this.cookiesPurchased[i]} cookies`;
+        ulElem.appendChild(liElem);
+      }
+      else {
+        liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[i]} cookies`;
+        ulElem.appendChild(liElem);
+      }
+    }
   }
 };
 
