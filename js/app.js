@@ -146,6 +146,10 @@ seattle.render = function(){
     }
     num++;
   }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 };
 
 //creates render method in object tokyo
@@ -175,6 +179,10 @@ tokyo.render = function(){
     }
     num++;
   }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 };
 
 //creates render method in object dubai
@@ -204,6 +212,10 @@ dubai.render = function(){
     }
     num++;
   }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 };
 
 //creates render method in object paris
@@ -233,6 +245,10 @@ paris.render = function(){
     }
     num++;
   }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 };
 
 //creates render method in object lima
@@ -262,6 +278,10 @@ lima.render = function(){
     }
     num++;
   }
+
+  let liElem = document.createElement('li');
+  liElem.textContent = `Total: ${this.totalCookies} cookies`;
+  ulElem.appendChild(liElem);
 };
 
 //call
