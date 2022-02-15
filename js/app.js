@@ -128,15 +128,11 @@ seattle.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
-  let tracker = [];
   let num = 0;
   for(let j = 6; j < 20; j++){
     let liElem = document.createElement('li');
 
-    if(tracker.includes(j)){
-      break;
-    }
-    else if(j <= 11){
+    if(j <= 11){
       liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
@@ -148,7 +144,6 @@ seattle.render = function(){
       liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
-    tracker.push(j);
     num++;
   }
 };
@@ -162,15 +157,11 @@ tokyo.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
-  let tracker = [];
   let num = 0;
   for(let j = 6; j < 20; j++){
     let liElem = document.createElement('li');
 
-    if(tracker.includes(j)){
-      break;
-    }
-    else if(j <= 11){
+    if(j <= 11){
       liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
@@ -182,7 +173,6 @@ tokyo.render = function(){
       liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
-    tracker.push(j);
     num++;
   }
 };
@@ -196,15 +186,11 @@ dubai.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
-  let tracker = [];
   let num = 0;
   for(let j = 6; j < 20; j++){
     let liElem = document.createElement('li');
 
-    if(tracker.includes(j)){
-      break;
-    }
-    else if(j <= 11){
+    if(j <= 11){
       liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
@@ -216,7 +202,6 @@ dubai.render = function(){
       liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
-    tracker.push(j);
     num++;
   }
 };
@@ -230,15 +215,11 @@ paris.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
-  let tracker = [];
   let num = 0;
   for(let j = 6; j < 20; j++){
     let liElem = document.createElement('li');
 
-    if(tracker.includes(j)){
-      break;
-    }
-    else if(j <= 11){
+    if(j <= 11){
       liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
@@ -250,7 +231,6 @@ paris.render = function(){
       liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
-    tracker.push(j);
     num++;
   }
 };
@@ -264,15 +244,11 @@ lima.render = function(){
   let ulElem = document.createElement('ul');
   citySales.appendChild(ulElem);
 
-  let tracker = [];
   let num = 0;
   for(let j = 6; j < 20; j++){
     let liElem = document.createElement('li');
 
-    if(tracker.includes(j)){
-      break;
-    }
-    else if(j <= 11){
+    if(j <= 11){
       liElem.textContent = `${j}am:${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
@@ -284,7 +260,6 @@ lima.render = function(){
       liElem.textContent = `${j - 12}pm: ${this.cookiesPurchased[num]} cookies`;
       ulElem.appendChild(liElem);
     }
-    tracker.push(j);
     num++;
   }
 };
