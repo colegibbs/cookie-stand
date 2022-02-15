@@ -5,6 +5,7 @@ let citySales = document.getElementById('city sales');
 
 //seattle object: min customers per hr, max customers per hour, avg cookies per customer, method for random customer generator, empty arry for cookes purchased per hour based on random customer number
 let seattle = {
+  location: 'Seattle',
   minCustPerHour: 23,
   maxCustPerHour: 65,
   avgCookiesPerCust: 6.3,
@@ -21,6 +22,7 @@ let seattle = {
 
 //Tokyo object: same specs
 let tokyo = {
+  location: 'Tokyo',
   minCustPerHour: 3,
   maxCustPerHour: 24,
   avgCookiesPerCust: 1.2,
@@ -37,6 +39,7 @@ let tokyo = {
 
 //Dubai: same specs
 let dubai = {
+  location: 'Dubai',
   minCustPerHour: 11,
   maxCustPerHour: 38,
   avgCookiesPerCust: 3.7,
@@ -53,6 +56,7 @@ let dubai = {
 
 //paris:same specs
 let paris = {
+  location: 'Paris',
   minCustPerHour: 20,
   maxCustPerHour: 38,
   avgCookiesPerCust: 2.3,
@@ -69,6 +73,7 @@ let paris = {
 
 //lima: same specs
 let lima = {
+  location: 'Lima',
   minCustPerHour: 2,
   maxCustPerHour: 16,
   avgCookiesPerCust: 4.6,
@@ -83,8 +88,8 @@ let lima = {
   }
 };
 
-//call custGenerator and create array for cookies sold for each city
-function cookiesSold(){
+//call custGenerator and create array for cookies sold for each city and renders content
+function cookiesSoldAndRender(){
   let cities = [seattle, tokyo, dubai, paris, lima];
   for(let i = 0; i < cities.length; i++){
     let city = cities[i];
@@ -94,6 +99,9 @@ function cookiesSold(){
       city.cookiesPurchased.push(cookies);
     }
     city.cookieSum();
+  }
+  for(let i = 0; i < cities.length; i++){
+    cities[i].render();
   }
 }
 
@@ -110,7 +118,89 @@ function sum(arr){
   return sum;
 }
 
-cookiesSold();
+//creates render method in object seattle
+seattle.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  for(let i = 0; i < this.cookiesPurchased.length; i++){
+    let liElem = document.createElement('li');
+    liElem.textContent = this.cookiesPurchased[i];
+    ulElem.appendChild(liElem);
+  }
+};
+
+//creates render method in object tokyo
+tokyo.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  for(let i = 0; i < this.cookiesPurchased.length; i++){
+    let liElem = document.createElement('li');
+    liElem.textContent = this.cookiesPurchased[i];
+    ulElem.appendChild(liElem);
+  }
+};
+
+//creates render method in object dubai
+dubai.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  for(let i = 0; i < this.cookiesPurchased.length; i++){
+    let liElem = document.createElement('li');
+    liElem.textContent = this.cookiesPurchased[i];
+    ulElem.appendChild(liElem);
+  }
+};
+
+//creates render method in object paris
+paris.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  for(let i = 0; i < this.cookiesPurchased.length; i++){
+    let liElem = document.createElement('li');
+    liElem.textContent = this.cookiesPurchased[i];
+    ulElem.appendChild(liElem);
+  }
+};
+
+//creates render method in object lima
+lima.render = function(){
+  let h2Elem = document.createElement('h2');
+  h2Elem.textContent = this.location;
+  citySales.appendChild(h2Elem);
+
+  let ulElem = document.createElement('ul');
+  citySales.appendChild(ulElem);
+
+  for(let i = 0; i < this.cookiesPurchased.length; i++){
+    let liElem = document.createElement('li');
+    liElem.textContent = this.cookiesPurchased[i];
+    ulElem.appendChild(liElem);
+  }
+};
+
+
+cookiesSoldAndRender();
+
 
 console.log(seattle.cookiesPurchased);
 console.log(seattle.totalCookies);
