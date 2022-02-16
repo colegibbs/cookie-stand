@@ -1,6 +1,11 @@
+h1 {
+  font-size: 30px;
+}
+
 table {
   margin: auto;
   width: 80%;
+  margin-top: 50px;
 }
 
 tr {
