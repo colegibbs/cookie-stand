@@ -1,0 +1,32 @@
+h1 {
+  font-size: 30px;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  margin-top: 50px;
+}
+
+tr {
+  border: solid;
+  text-align: center;
+}
+
+thead {
+  border: solid;
+  text-align: center;
+}
+
+tfoot {
+  border: solid;
+  text-align: center;
+}
+
+th {
+  border: solid;
+}
+
+td {
+  border: solid;
+}
