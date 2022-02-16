@@ -70,12 +70,12 @@ function sum(arr){
   return sum;
 }
 
-// header for table: times of day 
+// header for table: times of day
 function tableTimes(){
   let theadElem = document.createElement('thead');
   salesTable.appendChild(theadElem);
   let th1Elem = document.createElement('th');
-  th1Elem.textContent = '';
+  th1Elem.textContent = 'Locations';
   theadElem.appendChild(th1Elem);
 
   for(let i = 0; i < hoursOpen.length; i++){
