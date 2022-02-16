@@ -1,0 +1,27 @@
+table {
+  margin: auto;
+  width: 80%;
+}
+
+tr {
+  border: solid;
+  text-align: center;
+}
+
+thead {
+  border: solid;
+  text-align: center;
+}
+
+tfoot {
+  border: solid;
+  text-align: center;
+}
+
+th {
+  border: solid;
+}
+
+td {
+  border: solid;
+}
