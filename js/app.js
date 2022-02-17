@@ -92,8 +92,8 @@ function tableTimes(){
 
 //footer for table: Totals
 function hourlyTotals(){
-  console.log(stores[0].cookiesPurchased[0]);
   let tfootElem = document.createElement('tfoot');
+  tfootElem.setAttribute('id', 'footy');
   salesTable.appendChild(tfootElem);
   let thElem = document.createElement('th');
   thElem.textContent = 'Total';
@@ -144,8 +144,9 @@ function handleSubmit(event) {
   let avgCookiesPerCust = Number(event.target.avgCookiesPerCust.value);
   console.log(avgCookiesPerCust);
 
-  stores.push(new Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust));
+  new Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
 
+  console.log(stores[stores.length -1].cookiesPurchased);
   let store = stores[stores.length - 1];
   for(let j = 0; j < 14; j++){
     store.custGenerator();
@@ -155,8 +156,12 @@ function handleSubmit(event) {
   }
   store.cookieSum();
   store.render();
+  let tfootElem = document.getElementById('footy');
+  salesTable.removeChild(tfootElem);
+  hourlyTotals();
+  console.log(stores);
 }
 
 salesData.addEventListener('submit', handleSubmit);
-
 cookiesSoldAndRender(stores);
+
