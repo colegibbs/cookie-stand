@@ -44,18 +44,24 @@ main img:nth-child(1) {
   margin-left: 50px;
 }
 
-main :nth-child(2) {
+main section:nth-child(2) {
   display: flex;
   margin-left: 50px;
   margin-right: 58px;
+  justify-content: space-evenly;
 }
 
-main :nth-child(2) img {
-  margin-right: 0px;
+main section:nth-child(2) ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
-main :nth-child(2) ul li {
-  margin: auto;
+main section:nth-child(3) {
+  display: flex;
+  margin-left: 50px;
+  margin-right: 58px;
+  justify-content: space-between;
 }
 
 h2 {
