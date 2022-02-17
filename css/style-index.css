@@ -29,7 +29,7 @@ header ul {
 
 a {
   text-decoration: none;
-  color: #22223b;
+  color: #f07167;
   font-size: 20px;
 }
 
@@ -49,6 +49,10 @@ main section:nth-child(2) {
   margin-left: 50px;
   margin-right: 58px;
   justify-content: space-evenly;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: solid lightgray;
+  padding-top: 10px;
 }
 
 main section:nth-child(2) ul {
@@ -62,6 +66,40 @@ main section:nth-child(3) {
   margin-left: 50px;
   margin-right: 58px;
   justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: solid lightgray;
+  padding-top: 10px;
+}
+
+main section:nth-child(3) img {
+  width:282px;
+}
+
+main section:nth-child(4) {
+  display: flex;
+  margin-left: 50px;
+  margin-right: 58px;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: solid lightgray;
+  padding-top: 10px;
+}
+
+main section:nth-child(4) a {
+  font-size: 30px;
+}
+
+main section:nth-child(4) img {
+  margin-left: 10px;
+  margin-right: 10px;;
+}
+
+main section:nth-child(5) {
+  text-align: center;
+  border-top: solid lightgray;
+  padding-bottom: 10px;
 }
 
 h2 {
@@ -72,3 +110,14 @@ h2 {
 h3 {
   font-size: 20px;
 }
+
+footer {
+  background-color: #8e9aaf;
+}
+
+footer img {
+  width: 600;
+  height: 200px;
+  margin-left: 300px;
+}
+
