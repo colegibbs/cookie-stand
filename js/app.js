@@ -2,7 +2,7 @@
 
 // create dom window
 let salesTable = document.getElementById('sales table');
-le
+let salesData = document.getElementById('sales-data');
 
 //Array to hold objects
 let stores = [];
@@ -136,6 +136,19 @@ function cookiesSoldAndRender(stores){
   hourlyTotals();
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let location = event.target.location.value;
+  let minCustPerHour = event.target.minCustPerHour.value;
+  let maxCustPerHour = event.target.maxCustPerHour.value;
+  let avgCookiesPerCust = event.target.avgCookiesPerCust.value;
 
+  stores.push(new Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust));
+
+  
+
+}
+
+salesData.addEventListener('submit', handleSubmit);
 
 cookiesSoldAndRender(stores);
