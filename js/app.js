@@ -124,7 +124,6 @@ function cookiesSoldAndRender(stores){
     let store = stores[i];
     for(let j = 0; j < 14; j++){
       store.custGenerator();
-      console.log('render: ', store.cust);
       let cookies = Math.ceil(Number(store.cust) * Number(store.avgCookiesPerCust));
       store.cookiesPurchased.push(cookies);
     }
@@ -142,10 +141,7 @@ function handleSubmit(event) {
   let location = event.target.location.value;
   let minCustPerHour = parseInt(event.target.minCustPerHour.value);
   let maxCustPerHour = parseInt(event.target.maxCustPerHour.value);
-  let avgCookiesPerCust = parseInt(event.target.avgCookiesPerCust.value);
-  console.log(location);
-  console.log(minCustPerHour);
-  console.log(maxCustPerHour);
+  let avgCookiesPerCust = Number(event.target.avgCookiesPerCust.value);
   console.log(avgCookiesPerCust);
 
   stores.push(new Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust));
