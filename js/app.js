@@ -2,6 +2,7 @@
 
 // create dom window
 let salesTable = document.getElementById('sales table');
+le
 
 //Array to hold objects
 let stores = [];
@@ -134,4 +135,7 @@ function cookiesSoldAndRender(stores){
   }
   hourlyTotals();
 }
+
+
+
 cookiesSoldAndRender(stores);
