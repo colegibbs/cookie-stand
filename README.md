@@ -51,3 +51,24 @@ Author: Cole Gibbs
 ### Reflections and Comments 08b
 
 Today I learned about the flex display in css. I thought it was much easier to style using the flex property. I also learned it is best to style from left to right and top to bottom which was also very helpful in styling my web page. I also learned about wire-framing and how useful they are. It's much easier to style with css when you already know what you are trying to do. I often find myself using css in a throw it at the wall and see what sticks fashion. Using wire-frames makes it much clearer what needs to be done for the web site to look good. I also learned how to use the pseudo class :hover with the transition attribute to make a hover transition look really good.
+
+## Lab 09
+
+### Salmon Cookies 09
+
+In this lab I styled and added content to the index html page. This will be the front facing page. I added the content that was required and did as much styling as I could manage. I used the flex display when I could. I created a seperate stylesheet for my index html file to keep organized.
+
+Author: Cole Gibbs
+
+PR: [Pull Request 4](https://github.com/colegibbs/cookie-stand/pull/4)
+
+### Links and Resources 09
+
+- [Stackoverflow(dealing with floats in a form)](https://stackoverflow.com/questions/22434586/how-to-input-float-numbers-in-html-form/22434598)
+- [Stackoverflow(removing child elemens with parent.removeChild())](https://stackoverflow.com/questions/5181006/javascript-document-removeelementbyid)
+- [Quora(.setAttribute())](https://www.quora.com/How-do-I-add-an-HTML-element-ID-with-Javascript-and-classes)
+- [MDN(.setAttribute())](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+
+### Reflections and Comments 09
+
+Today I learned how to write and use a form using html and JS. In html you use the form with child elements like feildset, label, and input. For label and input, the for and for attribute on the label tag and the id attribute on the input tag must match so they can be tethered together. In JS you have to create a DOM window with the form, an event listener and a call back function. It can be confusing how the event listeners are asynchronous. They only call the call back function when the event occurs which means it isn't included in the top to bottom running of the code. Instead you have to think of it in terms of time. Not which code if first on the page, but which code runs and is complete first in time. I think the learning retention pyramid is close to correct for me. I would flip reading and lecture though. I don't find the readings very useful. I do however find the books useful when I need them.
