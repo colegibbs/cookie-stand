@@ -2,6 +2,7 @@
 
 // create dom window
 let salesTable = document.getElementById('sales table');
+let salesData = document.getElementById('sales-data');
 
 //Array to hold objects
 let stores = [];
@@ -91,8 +92,8 @@ function tableTimes(){
 
 //footer for table: Totals
 function hourlyTotals(){
-  console.log(stores[0].cookiesPurchased[0]);
   let tfootElem = document.createElement('tfoot');
+  tfootElem.setAttribute('id', 'footy');
   salesTable.appendChild(tfootElem);
   let thElem = document.createElement('th');
   thElem.textContent = 'Total';
@@ -134,4 +135,34 @@ function cookiesSoldAndRender(stores){
   }
   hourlyTotals();
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let location = event.target.location.value;
+  let minCustPerHour = parseInt(event.target.minCustPerHour.value);
+  let maxCustPerHour = parseInt(event.target.maxCustPerHour.value);
+  let avgCookiesPerCust = Number(event.target.avgCookiesPerCust.value);
+  console.log(avgCookiesPerCust);
+
+  new Store(location, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
+
+  console.log(stores[stores.length -1].cookiesPurchased);
+  let store = stores[stores.length - 1];
+  for(let j = 0; j < 14; j++){
+    store.custGenerator();
+    console.log('form: ', store.cust);
+    let cookies = Math.ceil(Number(store.cust) * Number(store.avgCookiesPerCust));
+    store.cookiesPurchased.push(cookies);
+  }
+  store.cookieSum();
+  store.render();
+  let tfootElem = document.getElementById('footy');
+  salesTable.removeChild(tfootElem);
+  hourlyTotals();
+  console.log(stores);
+  salesData.reset();
+}
+
+salesData.addEventListener('submit', handleSubmit);
 cookiesSoldAndRender(stores);
+
