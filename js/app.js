@@ -160,6 +160,7 @@ function handleSubmit(event) {
   salesTable.removeChild(tfootElem);
   hourlyTotals();
   console.log(stores);
+  salesData.reset();
 }
 
 salesData.addEventListener('submit', handleSubmit);
