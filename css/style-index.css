@@ -1,5 +1,9 @@
 
 /* Header styling */
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 header {
   background-color: #8e9aaf;
   height: 100px;
@@ -8,6 +12,8 @@ header {
 h1 {
   font-size: 50px;
   display: inline-block;
+  font-family: 'Shizuru', cursive;
+  color: black;
 }
 
 header img {
